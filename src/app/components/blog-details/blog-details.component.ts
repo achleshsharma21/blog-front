@@ -32,6 +32,13 @@ export class BlogDetailsComponent implements OnInit {
         console.log(error);
       });
   }
+  
+  likeBlog():void {
+    this.blogService.like((this.blog as IBlog)._id, this.blog)
+    .subscribe(
+      response => console.log(response),
+      error=>console.error(error)
+    )};
 
   deleteBlog():void {
     this.blogService.delete((this.blog as IBlog)._id)

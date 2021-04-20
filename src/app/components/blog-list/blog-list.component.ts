@@ -39,4 +39,6 @@ export class BlogListComponent implements OnInit {
     this.currentBlog = null;
   }
 
+  
+
 }

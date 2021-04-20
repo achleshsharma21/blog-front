@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { IBlog } from '../components/blog.model';
 
 const baseUrl = 'http://localhost:4000/blogs';
-
+const likeUrl = 'http://localhost:4000/blogs/likes'
 @Injectable({
   providedIn: 'root'
 })
@@ -26,6 +26,10 @@ export class BlogsService {
 
   update(id:any, data:any): Observable<any> {
     return this.http.put(`${baseUrl}/${id}`,data);
+  }
+
+  like(id:any, data:any): Observable<any> {
+    return this.http.put(`${likeUrl}/${id}`,data);
   }
 
   delete(id: any): Observable<any> {
