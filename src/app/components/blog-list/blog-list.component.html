@@ -1,0 +1,16 @@
+<div class="container">
+<!-- <li class="list-group-item" *ngFor="let blog of blogs; let i = index" [class.active]="i == currentIndex" (click)="setActiveBlogs(blog, i)"> -->
+    <h1 class="mb-4">BLOG APPLICATION</h1>
+    <a href="/add" class="btn btn-success">New Blog</a>
+    <div *ngFor="let blog of blogs; let i = index">
+    <div class="card mt-4" style="background-color: rgb(176, 224, 230); border-color: white;">
+        <div class="card-body">
+            <h4 class="card-title">{{ blog.title }}</h4>
+            <div class="card-text mb-2">{{ blog.category }}</div>
+            <div class="card-text mb-2">Likes: {{ blog.likes }}</div>
+            <!-- <h6>{{blog._id}}</h6> -->
+        <a href="/blogs/{{blog._id}}" class="btn btn-primary">Read More</a>
+        </div>
+        </div>
+</div>
+</div>

@@ -1,0 +1,36 @@
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="blog.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <input
+              class="form-control"
+              id="category"
+              required
+              [(ngModel)]="blog.category"
+              name="category"
+            />
+          </div>
+          <div class="form-group">
+            <label for="content">Content</label>
+            <input
+              class="form-control"
+              id="content"
+              required
+              [(ngModel)]="blog.content"
+              name="content"
+            />
+          </div>
+          <button (click)="saveBlog()" class="btn btn-success">Submit</button>
+        </div>
+        </div>
