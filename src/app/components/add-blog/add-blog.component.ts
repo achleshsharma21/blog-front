@@ -20,19 +20,10 @@ export class AddBlogComponent implements OnInit {
   }
 
   saveBlog(): void {
-    const data = {
-      title: this.blog.title,
-      categoty: this.blog.category,
-      content: this.blog.content
-    };
-    this.blogService.create(data)
+    this.blogService.create(this.blog)
     .subscribe(
-      response => {
-        console.log(response);
-      },
-      error => {
-        console.log(error);
-      });
+      data => console.log('Success!', data),
+      error => console.error('Error!',error)
+    )
   }
-
 }
