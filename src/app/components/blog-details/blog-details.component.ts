@@ -10,7 +10,12 @@ import { IBlog } from '../blog.model';
 })
 export class BlogDetailsComponent implements OnInit {
 
-  blog: any;
+  blog: any = {
+    _id: '',
+    title: '',
+    category: '',
+    content: ''
+  };
   currentBlog=null;
 
   constructor(
@@ -20,7 +25,8 @@ export class BlogDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogService.get(this.route.snapshot.paramMap.get('id')).subscribe(
-      data => { this.blog=data; },
+      data => { this.blog=data;          
+      },
       error => {
               console.log(error);
             });

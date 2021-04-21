@@ -25,6 +25,8 @@ export class BlogsService {
   }
 
   update(id:any, data:any): Observable<any> {
+    console.log(id);
+    console.log(data);
     return this.http.put(`${baseUrl}/${id}`,data);
   }
 
