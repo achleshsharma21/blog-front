@@ -11,6 +11,7 @@ import { IBlog } from '../blog.model';
 export class BlogDetailsComponent implements OnInit {
 
   blog: any;
+  currentBlog=null;
 
   constructor(
     private blogService: BlogsService,
@@ -18,19 +19,12 @@ export class BlogDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.getBlog(this.route.snapshot.paramMap.get('id'));
-  }
-
-  getBlog(id:any):void {
-    this.blogService.get(id)
-    .subscribe(
-      data => {
-        this.blog=data;
-        console.log(data);
-      },
+    this.blogService.get(this.route.snapshot.paramMap.get('id')).subscribe(
+      data => { this.blog=data; },
       error => {
-        console.log(error);
-      });
+              console.log(error);
+            });
+    console.log(this.blog);
   }
   
   likeBlog():void {

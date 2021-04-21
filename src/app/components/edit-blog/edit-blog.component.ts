@@ -27,7 +27,10 @@ export class EditBlogComponent implements OnInit {
   updateBlog():void {
     this.blogService.update(this.route.snapshot.paramMap.get('id'), this.blog)
     .subscribe(
-      response => console.log('Success',response),
+      response => {
+        console.log('Success',response);
+        console.log(this.route.snapshot.paramMap.get('id'))
+      },
       error => console.error('Error',error)
     )};
 }
