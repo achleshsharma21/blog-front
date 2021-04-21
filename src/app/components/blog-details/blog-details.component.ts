@@ -34,14 +34,14 @@ export class BlogDetailsComponent implements OnInit {
   }
   
   likeBlog():void {
-    this.blogService.like((this.blog as IBlog)._id, this.blog)
+    this.blogService.like(this.route.snapshot.paramMap.get('id'), this.blog)
     .subscribe(
       response => console.log(response),
       error=>console.error(error)
     )};
 
   deleteBlog():void {
-    this.blogService.delete((this.blog as IBlog)._id)
+    this.blogService.delete(this.route.snapshot.paramMap.get('id'))
     .subscribe(
       response => {
         console.log(response);

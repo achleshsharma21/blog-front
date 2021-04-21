@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {BlogsService} from 'src/app/services/blogs.service'
+import { IBlog } from '../blog.model';
 
 @Component({
   selector: 'app-add-blog',
@@ -13,8 +15,9 @@ export class AddBlogComponent implements OnInit {
     category: '',
     content: ''
   };
-
-  constructor(private blogService: BlogsService) { }
+  submitted = false
+  constructor(private blogService: BlogsService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,8 +25,15 @@ export class AddBlogComponent implements OnInit {
   saveBlog(): void {
     this.blogService.create(this.blog)
     .subscribe(
-      data => console.log('Success!', data),
+      data => 
+      {
+        this.submitted=true;
+        console.log('Success!', data)
+        console.log(this.submitted)
+      },
       error => console.error('Error!',error)
     )
-  }
+  };
+  
+    //console.log(this.blog)
 }

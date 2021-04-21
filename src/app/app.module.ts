@@ -9,13 +9,16 @@ import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { RouterModule } from '@angular/router';
+import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddBlogComponent,
     BlogDetailsComponent,
-    BlogListComponent
+    BlogListComponent,
+    EditBlogComponent,
+    
   ],
   imports: [
     BrowserModule,

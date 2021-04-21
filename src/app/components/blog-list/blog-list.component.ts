@@ -34,11 +34,4 @@ export class BlogListComponent implements OnInit {
       });
   }
 
-  refreshList():void {
-    this.retrieveBlogs();
-    this.currentBlog = null;
-  }
-
-  
-
 }
